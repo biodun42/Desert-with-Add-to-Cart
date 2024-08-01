@@ -19,7 +19,8 @@ async function getData() {
             <img src="assets/images/icon-add-to-cart.svg" alt="" />Add to Cart
           </button>
           <button id="btn2-${index}" class="btn2" style="display: none;">
-            <img src="assets/images/icon-decrement-quantity.svg" onclick="decrementQuantity(${index})" alt="" />1
+            <img src="assets/images/icon-decrement-quantity.svg" onclick="decrementQuantity(${index})" alt="" />
+            <span id="quantity-display-${index}">1</span>
             <img src="assets/images/icon-increment-quantity.svg" onclick="incrementQuantity(${index})" alt="" />
           </button>
           <h4 class="category">${item.category}</h4>
@@ -132,9 +133,11 @@ function incrementQuantity(index) {
   const price = parseFloat(item.querySelector(".price").innerText.substring(1));
 
   const quantityElement = document.getElementById(`quantity-${index}`);
+  const quantityDisplayElement = document.getElementById(`quantity-display-${index}`);
   let quantity = parseInt(quantityElement.innerText.replace("x", "").trim());
   quantity++;
   quantityElement.innerText = `${quantity}x`;
+  quantityDisplayElement.innerText = `${quantity}`;
 
   const totalElement = document.getElementById(`total-${index}`);
   const newTotal = price * quantity;
@@ -154,10 +157,12 @@ function decrementQuantity(index) {
   const price = parseFloat(item.querySelector(".price").innerText.substring(1));
 
   const quantityElement = document.getElementById(`quantity-${index}`);
+  const quantityDisplayElement = document.getElementById(`quantity-display-${index}`);
   let quantity = parseInt(quantityElement.innerText.replace("x", "").trim());
   if (quantity > 1) {
     quantity--;
     quantityElement.innerText = `${quantity}x`;
+    quantityDisplayElement.innerText = `${quantity}`;
 
     const totalElement = document.getElementById(`total-${index}`);
     const newTotal = price * quantity;
