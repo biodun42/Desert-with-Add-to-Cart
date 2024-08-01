@@ -1,0 +1,464 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+:root {
+  --Red: hsl(14, 86%, 42%);
+  --Green: hsl(159, 69%, 38%);
+
+  --Rose50: hsl(20, 50%, 98%);
+  --Rose100: hsl(13, 31%, 94%);
+  --Rose300: hsl(14, 25%, 72%);
+  --Rose400: hsl(7, 20%, 60%);
+  --Rose500: hsl(12, 20%, 44%);
+  --Rose900: hsl(14, 65%, 9%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Text", sans-serif;
+}
+body {
+  background-color: var(--Rose50);
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 2rem;
+  position: relative;
+}
+section.active{
+  filter: blur(5px);
+}
+.left-part h1 {
+  font-size: 30px;
+  color: var(--Rose900);
+  text-align: start;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+#all-desert {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.each-desert {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+}
+.des {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+.btn1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--Rose400);
+  color: var(--Rose900);
+  font-weight: 500;
+  /* position: absolute;
+  top: 260px; */
+  cursor: pointer;
+  margin: -2rem;
+}
+.btn1.active {
+  display: none;
+}
+.btn2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.8rem;
+  background-color: var(--Red);
+  padding: 0.6rem 0.45rem;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: 400;
+  /* position: absolute;
+  top: 260px; */
+  display: none;
+  margin: -2rem;
+}
+.btn2.active {
+  display: none;
+}
+.btn1 img {
+  width: 23px;
+  height: 23px;
+}
+.btn2 img {
+  width: 18px;
+  height: 18px;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+.each-desert h4 {
+  margin-top: 2.5rem;
+  font-size: 17px;
+  color: var(--Rose400);
+  text-align: start;
+  font-weight: 400;
+  width: 100%;
+}
+.each-desert h3 {
+  margin-top: 0.5rem;
+  font-size: 18px;
+  color: var(--Rose900);
+  text-align: start;
+  font-weight: 500;
+  width: 100%;
+}
+.each-desert p {
+  margin-top: 0.5rem;
+  font-size: 15px;
+  color: var(--Red);
+  text-align: start;
+  font-weight: 600;
+  width: 100%;
+}
+
+
+.box {
+  width: 40%;
+  background-color: white;
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+}
+.box h1 {
+  font-size: 23px;
+  color: var(--Red);
+  text-align: start;
+  width: 100%;
+}
+.nothing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.nothing p {
+  font-size: 17px;
+  color: var(--Rose400);
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+}
+.nothing.active {
+  display: none;
+}
+#Cart-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.item-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.item-name h4 {
+  font-size: 17px;
+  color: var(--Rose900);
+  text-align: start;
+  font-weight: 500;
+  width: 100%;
+}
+.pricing {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.pricing p {
+  font-size: 16px;
+  color: var(--Red);
+  text-align: start;
+  font-weight: 600;
+}
+.span1 {
+  color: var(--Rose300);
+}
+.span2 {
+  color: var(--Rose400);
+}
+.list img {
+  width: 19px;
+  height: 19px;
+  border: 1px solid var(--Rose300);
+  border-radius: 50%;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+.list img:hover {
+  border: 1px solid var(--Rose900);
+  fill: var(--Rose900);
+}
+hr {
+  width: 100%;
+  border: 1px solid var(--Rose300);
+  opacity: 0.2;
+}
+#Cart-item-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#Cart-item-2.active{
+  display: none;
+}
+.Total {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.Total h3 {
+  font-size: 17px;
+  color: var(--Rose900);
+  text-align: start;
+  font-weight: 500;
+  width: fit-content;
+}
+.Total h1 {
+  font-size: 25px;
+  color: var(--Rose900);
+  font-weight: 700;
+  width: fit-content;
+}
+.btn-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  background-color: var(--Rose100);
+  padding: 0.6rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  color: var(--Rose500);
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn-1 span {
+  color: var(--Rose900);
+}
+.btn-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  background-color: var(--Red);
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-2:hover {
+  background-color: hsl(14, 77%, 32%);
+}
+.modal{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-window {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  position: absolute;
+  top: 50%;
+  transition: 0.9s ease-in-out;
+}
+.modal.active{
+  display: none;
+}
+.modal-window h1 {
+  font-size: 30px;
+  color: var(--Rose900);
+  text-align: start;
+  font-weight: 700;
+  width: 100%;
+}
+.modal-window p {
+  font-size: 17px;
+  color: var(--Rose400);
+  text-align: start;
+  font-weight: 500;
+  width: 100%;
+  margin-top: -1rem;
+}
+.Orders {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--Rose50);
+  border-radius: 1rem;
+}
+.arrange{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.it-image{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.it-image img{
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+}
+.it-name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.5rem;
+}
+.it-name h3{
+  font-size: 18px;
+  color: var(--Rose900);
+  text-align: start;
+  font-weight: 500;
+  width: 100%;
+}
+.amount{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.amount h4{
+  font-size: 17px;
+  color: var(--Red);
+  font-weight: 500;
+  width: 100%;
+}
+.amount p{
+  font-size: 17px;
+  color: var(--Rose300);
+  font-weight: 500;
+  width: 100%;
+  margin: 0;
+}
+.arrange h5{
+  font-size: 20px;
+  color: var(--Rose900);
+  font-weight: 700;
+}
+.tt-price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.tt-price h4{
+  font-size: 20px;
+  color: var(--Rose900);
+  font-weight: 500;
+  width: fit-content;
+}
+.tt-price h1{
+  font-size: 30px;
+  color: var(--Rose900);
+  font-weight: 700;
+  width: fit-content;
+}
+.btn3{
+  width: 50%;
+  background-color: var(--Red);
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  font-size: 17px;
+  margin-top: 1rem;
+
+}

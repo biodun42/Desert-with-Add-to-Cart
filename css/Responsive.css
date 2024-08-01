@@ -1,0 +1,85 @@
+@media screen and (max-width: 1170px) {
+  section{
+    gap: 1rem;
+  }
+  .pricing{
+    gap: 0.5rem;
+  }
+}
+@media screen and (max-width: 1074px) {
+  .box{
+    width: 100%;
+  }
+  section{
+    gap: 4rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-window{
+    width: 65%;
+  }
+}
+@media screen and (max-width: 765px) {
+  body{
+    padding: 1rem;
+  }
+  #all-desert{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .modal-window{
+    width: 95%;
+  }
+  .btn3{
+    width: 60%;
+  }
+  .modal{
+    width: 100%;
+  }
+  .modal-window{
+    position: sticky;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 495px) {
+  #all-desert{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .left-part h1{
+    text-align: center;
+  }
+  .amount{
+    gap: 0.5rem;
+  }
+  .it-name{
+    gap: 0.1rem;
+  }
+}
+@media screen and (max-width: 458px) {
+  .arrange{
+    gap: 0.5rem;
+  }
+  .it-image img{
+    width: 50px;
+    height: 50px;
+  }
+  .btn3{
+    width: 100%;
+  }
+  .modal-window{
+    padding: 1rem;
+  }
+  .it-name h3{
+    text-align: center;
+  }
+  .modal-window h1{
+    font-size: 25px;
+  }
+  .modal-window p{
+    font-size: 15px;
+  }
+  .tt-price h4{
+    font-size: 17px;
+  }
+}
