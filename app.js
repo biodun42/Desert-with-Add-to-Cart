@@ -103,7 +103,7 @@ function removeItem(element, price, index) {
   cartTotal -= itemTotalPrice;
   itemCount -= quantity;
 
-  cartItems = cartItems.filter(item => item.index !== index);
+  cartItems = cartItems.filter((item) => item.index !== index);
 
   if (
     itemDiv.nextElementSibling &&
@@ -133,7 +133,9 @@ function incrementQuantity(index) {
   const price = parseFloat(item.querySelector(".price").innerText.substring(1));
 
   const quantityElement = document.getElementById(`quantity-${index}`);
-  const quantityDisplayElement = document.getElementById(`quantity-display-${index}`);
+  const quantityDisplayElement = document.getElementById(
+    `quantity-display-${index}`
+  );
   let quantity = parseInt(quantityElement.innerText.replace("x", "").trim());
   quantity++;
   quantityElement.innerText = `${quantity}x`;
@@ -146,7 +148,7 @@ function incrementQuantity(index) {
   cartTotal += price;
   itemCount++;
 
-  cartItems.find(item => item.index === index).quantity = quantity;
+  cartItems.find((item) => item.index === index).quantity = quantity;
 
   updateTotal();
   updateItemCount();
@@ -157,7 +159,9 @@ function decrementQuantity(index) {
   const price = parseFloat(item.querySelector(".price").innerText.substring(1));
 
   const quantityElement = document.getElementById(`quantity-${index}`);
-  const quantityDisplayElement = document.getElementById(`quantity-display-${index}`);
+  const quantityDisplayElement = document.getElementById(
+    `quantity-display-${index}`
+  );
   let quantity = parseInt(quantityElement.innerText.replace("x", "").trim());
   if (quantity > 1) {
     quantity--;
@@ -171,8 +175,7 @@ function decrementQuantity(index) {
     cartTotal -= price;
     itemCount--;
 
-    cartItems.find(item => item.index === index).quantity = quantity;
-
+    cartItems.find((item) => item.index === index).quantity = quantity;
   } else {
     removeItem(
       document.querySelector(
@@ -207,14 +210,17 @@ function confirmOrder() {
   section.classList.add("active");
   modal.classList.remove("active");
 
-  let orderDetails = cartItems.map(item => {
-    let itemElement = document.querySelector(`.each-desert[data-index="${item.index}"]`);
-    let itemName = itemElement.querySelector(".category").innerText;
-    let itemImage = itemElement.querySelector(".des").src;
-    let itemQuantity = item.quantity;
-    let itemPrice = item.price * itemQuantity;
-    
-    return `
+  let orderDetails = cartItems
+    .map((item) => {
+      let itemElement = document.querySelector(
+        `.each-desert[data-index="${item.index}"]`
+      );
+      let itemName = itemElement.querySelector(".category").innerText;
+      let itemImage = itemElement.querySelector(".des").src;
+      let itemQuantity = item.quantity;
+      let itemPrice = item.price * itemQuantity;
+
+      return `
       <div class="arrange">
         <div class="it-image">
           <img src="${itemImage}" alt="" />
@@ -230,7 +236,8 @@ function confirmOrder() {
       </div>
       <hr />
     `;
-  }).join("");
+    })
+    .join("");
 
   modal.innerHTML = `
   <div class="modal-window">
@@ -247,6 +254,11 @@ function confirmOrder() {
     </div>
   </div>
   `;
+
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth",
+  });
 }
 
 function startNewOrder() {
@@ -280,4 +292,9 @@ function startNewOrder() {
   section.classList.remove("active");
   modal.classList.remove("active");
   modal.innerHTML = "";
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 }
