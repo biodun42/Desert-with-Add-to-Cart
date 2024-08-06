@@ -254,11 +254,6 @@ function confirmOrder() {
     </div>
   </div>
   `;
-
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth",
-  });
 }
 
 function startNewOrder() {
@@ -292,9 +287,4 @@ function startNewOrder() {
   section.classList.remove("active");
   modal.classList.remove("active");
   modal.innerHTML = "";
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
 }
